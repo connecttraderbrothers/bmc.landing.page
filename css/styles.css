@@ -59,11 +59,28 @@ nav {
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0;
   font-family: 'Russo One', sans-serif;
-  font-size: 24px;
+  font-size: 22px;
   text-decoration: none;
   color: var(--text-white);
+}
+
+.logo-text {
+  color: var(--text-white);
+}
+
+.logo-c {
+  background: var(--gradient-main);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.logo-text-light {
+  color: var(--text-grey);
+  font-weight: 400;
+  margin-left: 6px;
 }
 
 .nav-logo-img {
@@ -279,7 +296,7 @@ nav {
   max-width: 1000px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr auto;
   gap: 60px;
   align-items: center;
 }
@@ -333,9 +350,26 @@ nav {
   color: var(--text-light-grey);
 }
 
+.about-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-logo-img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+}
+
 .about-stats {
+  max-width: 1000px;
+  margin: 60px auto 0;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: 24px;
 }
 
@@ -556,6 +590,14 @@ footer {
     display: none;
   }
 
+  .nav-logo {
+    font-size: 16px;
+  }
+
+  .logo-text-light {
+    display: none;
+  }
+
   .hero {
     padding: 100px 24px 60px;
   }
@@ -573,8 +615,18 @@ footer {
     gap: 40px;
   }
 
-  .about-stats {
+  .about-logo {
     order: -1;
+  }
+
+  .about-logo-img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .about-stats {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 40px;
   }
 
   .reviews {
