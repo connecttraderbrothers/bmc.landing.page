@@ -5,6 +5,25 @@
 document.addEventListener('DOMContentLoaded', function() {
   
   // -----------------------------------------------------
+  // Parallax Scroll Effect for Hero Image
+  // -----------------------------------------------------
+  const heroImage = document.querySelector('.hero-bg-image');
+  const hero = document.querySelector('.hero');
+  
+  if (heroImage && hero) {
+    window.addEventListener('scroll', function() {
+      const scrollPosition = window.pageYOffset;
+      const heroHeight = hero.offsetHeight;
+      
+      // Only apply parallax while hero is in view
+      if (scrollPosition <= heroHeight) {
+        const parallaxSpeed = 0.5;
+        heroImage.style.transform = `translateY(${scrollPosition * parallaxSpeed}px)`;
+      }
+    }, { passive: true });
+  }
+
+  // -----------------------------------------------------
   // Smooth Scroll for Navigation Links
   // -----------------------------------------------------
   const navLinks = document.querySelectorAll('a[href^="#"]');
